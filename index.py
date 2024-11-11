@@ -1,11 +1,11 @@
 import sys
-from PyQt5.QtWidgets import *
-from main_window.main_app import MainWindow
+from PyQt5.QtWidgets import QApplication
+from main_window.select_window import SelectWindow
 
 def main():
   app = QApplication(sys.argv)
-  ex = MainWindow()
-  ex.show()
+  ex = SelectWindow()
+  #ex.show()
   
   sys.exit(app.exec_())
 

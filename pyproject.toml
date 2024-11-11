@@ -8,4 +8,5 @@ dependencies = [
     "pyqt5>=5.15.11",
     "pyqt5-qt5==5.15.2",
     "tensorflow>=2.18.0",
+    "numpy"==1.26.4
 ]

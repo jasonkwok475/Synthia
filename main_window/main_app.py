@@ -3,17 +3,29 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
+from structures.network import Network
+
 logging.basicConfig(level=logging.INFO)
 
+network = Network()
+
 class MainWindow(QWidget):
-  def __init__(self, parent = None):
-    super(MainWindow, self).__init__(parent)
+  def __init__(self, model):
+    super(MainWindow, self).__init__(None)
+
+    self.model = model
+
+    self.network = network
+    self.network.log.connect(self.log)
 
     self.resize(200,50)
     self.setWindowTitle("Synthia")
     self.initUi()
 
     self.showMaximized()
+
+  def log(self):
+    logging.info(str)
 
   def initUi(self):
     logTextBox = QTextEditLogger(self)
